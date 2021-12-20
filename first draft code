@@ -1,0 +1,35 @@
+from sense_hat import SenseHat
+import time
+
+s = SenseHat()
+s.low_light = True
+
+green = (0, 255, 0)
+yellow = (255, 255, 0)
+red = (255, 0, 0)
+state = 0
+
+while True:
+  x_axle = round(s.get_accelerometer_raw()['x'], 0)
+  y_axle = round(s.get_accelerometer_raw()['y'], 0)
+  z_axle = round(s.get_accelerometer_raw()['z'], 0)
+  temp = s.get_temperature()
+  hum = s.get_humidity()
+  if x_axle == 1 or y_axle != 0 or z_axle != 0:
+    s.clear(red)
+  else:
+    if (temp > 30 or hum > 80) and state == 0:
+      state = 1
+    elif (temp > 30 or hum > 80) and state == 1:
+      state = 0
+    else:
+      pass
+    if (state == 0):
+      s.clear(green)
+      time.sleep(2)
+    if (state == 1):
+      s.clear(yellow)
+      time.sleep(2)
+   
+        
+
