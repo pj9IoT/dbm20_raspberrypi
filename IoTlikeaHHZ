@@ -1,0 +1,5 @@
+#!/usr/bin/env python3
+from sense_hat import SenseHat
+sense = SenseHat()
+sense.rotation = 180  # Display-Rotation
+sense.show_message("IoT like a HHZ!")
