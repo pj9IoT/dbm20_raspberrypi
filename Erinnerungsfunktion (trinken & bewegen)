@@ -1,0 +1,29 @@
+from sense_hat import SenseHat
+import time
+
+sense = SenseHat()
+
+blue =(0, 0, 255)
+red = (255, 0, 0)
+nothing = (0,0,0)
+
+def smiley():
+    R = red
+    O = nothing
+    smile = [
+    O, O, O, O, O, O, O, O,
+    O, O, R, O, R, O, O, O,
+    O, O, O, O, O, O, O, O,
+    O, O, O, R, O, O, O, O,
+    O, R, O, O, O, R, O, O,
+    O, O, R, R, R, O, O, O,
+    O, O, O, O, O, O, O, O,
+    O, O, O, O, O, O, O, O,
+    ]
+    return smile
+
+while True:
+   time.sleep(3)
+   sense.clear(blue)
+   time.sleep(5)
+   sense.set_pixels(smiley())
