@@ -24,15 +24,15 @@ starttime_air = time.time() #Number of seconds since Jan 01st 1970
 starttime_drink = time.time() #Number of seconds since Jan 01st 1970
 
 def smiley_smile(): #definition of a smiling emoticon via the single pixels
-    R = red
+    G = green
     O = nothing
     smile = [
     O, O, O, O, O, O, O, O,
-    O, O, R, O, O, O, R, O,
+    O, O, G, O, O, O, G, O,
     O, O, O, O, O, O, O, O,
-    O, O, O, O, R, O, O, O,
-    O, R, O, O, O, O, R, O,
-    O, O, R, R, R, R, O, O,
+    O, O, O, O, G, O, O, O,
+    O, G, O, O, O, O, G, O,
+    O, O, G, G, G, G, O, O,
     O, O, O, O, O, O, O, O,
     O, O, O, O, O, O, O, O,
     ]
