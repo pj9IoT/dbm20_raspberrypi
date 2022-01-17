@@ -56,7 +56,7 @@ def smiley_sad(): #definition of a sad emoticon via the single pixels
 def smiley_bottle(): #definition of a bottle via the single pixels
     B = blue
     O = nothing
-    sad = [
+    bottle = [
     O, O, O, B, B, O, O, O,
     O, O, O, B, B, O, O, O,
     O, O, O, B, B, O, O, O,
