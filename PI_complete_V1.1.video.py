@@ -140,7 +140,7 @@ while True:
             time.sleep( 1 )
             sense.show_message( "AIR!", scroll_speed = fast )
             time.sleep( 1 )
-            sense.set_pixels(smiley_sad())
+            sense.set_pixels(smiley_bottle())
             time.sleep( 5 )
             for event in sense.stick.get_events():
                 #Check if the joystick was pressed
