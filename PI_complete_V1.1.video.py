@@ -187,11 +187,15 @@ while True:
                     if event.direction == "left": 
                         print( "Ignore: Reset alarm" )
                         sense.show_message("Ignore", scroll_speed = fast ) # Left arrow
+                        sense.set_pixels(smiley_sad())
+                        time.sleep( 3 )    
                         starttime_drink= time.time()
                         alarm_drink = 0
                     elif event.direction == "right":
                         print( "Drink: Reset alarm" )
                         sense.show_message("Drink", scroll_speed = fast ) # Left arrow
+                        sense.set_pixels(smiley_smile())
+                        time.sleep( 5 )   
                         #Drinking-Countdown
                         starttime_drink = time.time()
                         alarm_drink = 0
