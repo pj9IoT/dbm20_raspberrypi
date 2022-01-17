@@ -53,6 +53,21 @@ def smiley_sad(): #definition of a sad emoticon via the single pixels
     ]
     return sad
 
+def smiley_bottle(): #definition of a bottle via the single pixels
+    B = blue
+    O = nothing
+    sad = [
+    O, O, O, B, B, O, O, O,
+    O, O, O, B, B, O, O, O,
+    O, O, O, B, B, O, O, O,
+    O, O, O, B, B, O, O, O,
+    O, O, O, B, B, O, O, O,
+    O, O, O, O, O, O, O, O,
+    O, O, O, B, B, O, O, O,
+    O, O, O, O, O, O, O, O,
+    ]
+    return bottle
+
 sense.clear()
 sense.set_pixel(0, 0, 0, 255, 0)
 
@@ -178,7 +193,7 @@ while True:
             time.sleep( 1 )
             sense.show_message( "DRINK!", scroll_speed = fast )
             time.sleep( 1 )
-            sense.set_pixels(smiley_sad())
+            sense.set_pixels(smiley_bottle())
             time.sleep( 5 )
             for event in sense.stick.get_events():
                 #Check if the joystick was pressed
