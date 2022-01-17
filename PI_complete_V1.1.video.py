@@ -24,15 +24,15 @@ starttime_air = time.time() #Number of seconds since Jan 01st 1970
 starttime_drink = time.time() #Number of seconds since Jan 01st 1970
 
 def smiley_smile(): #definition of a smiling emoticon via the single pixels
-    G = green
+    R = red
     O = nothing
     smile = [
     O, O, O, O, O, O, O, O,
-    O, O, G, O, O, O, G, O,
+    O, O, R, O, O, O, R, O,
     O, O, O, O, O, O, O, O,
-    O, O, O, O, G, O, O, O,
-    O, G, O, O, O, O, G, O,
-    O, O, G, G, G, G, O, O,
+    O, O, O, O, R, O, O, O,
+    O, R, O, O, O, O, R, O,
+    O, O, R, R, R, R, O, O,
     O, O, O, O, O, O, O, O,
     O, O, O, O, O, O, O, O,
     ]
@@ -145,9 +145,10 @@ while True:
                         while airing == 1: 
                             air_now = time.time()
                             air_time = air_now - air_start
-                            if air_time >= 300:
+                            if air_time >= 150:
                                 print( "STOP AIRING" )
                                 sense.clear( blue )
+                                time.sleep( 5 )
                                 sense.show_message( "Airing completed", scroll_speed = 0.05  )
                                 sense.set_pixels(smiley_smile())
                                 time.sleep( 5 )
