@@ -12,7 +12,7 @@ nothing = (0, 0, 0) #nothing
 white = ( 255, 255, 255 ) #white
 
 run = 0 #adjust as needed
-h_alarm = 60 #adjust as needed
+h_alarm = 68 #adjust as needed
 alarm_air = 0 #adjust as needed
 alarm_drink = 0 #adjust as needed
 air_interval = 60 #adjust as needed
@@ -94,13 +94,6 @@ while True:
                 sense.clear(yellow) #Right arrow
                 run = 0
                 time.sleep( 5 )
-            #elif event.direction == "left": #clear / run ---> Was ist hier die Funktion?
-                #print("left")
-                #sense.show_message( "???", scroll_speed = fast )
-                #sense.clear()
-                #sense.set_pixel( 0, 0, 255, 0, 0 ) #Left arrow
-                #run = 0
-                #time.sleep( 5 )
     if run == 1:
         #run script
         print( "running" )
@@ -218,7 +211,3 @@ while True:
                         #Drinking-Countdown
                         starttime_drink = time.time()
                         alarm_drink = 0
-    # Wait a while and then clear the screen
-    #time.sleep( 1 )
-    #sense.clear()
-    #sense.set_pixel(0, 0, 0, 255, 0)
