@@ -53,10 +53,10 @@ def smiley_sad(): #definition of a sad emoticon via the single pixels
     ]
     return sad
 
-def smiley_bottle(): #definition of a bottle via the single pixels
+def smiley_bang(): #definition of a bottle via the single pixels
     B = blue
     O = nothing
-    bottle = [
+    bang = [
     O, O, O, B, B, O, O, O,
     O, O, O, B, B, O, O, O,
     O, O, O, B, B, O, O, O,
@@ -66,7 +66,7 @@ def smiley_bottle(): #definition of a bottle via the single pixels
     O, O, O, B, B, O, O, O,
     O, O, O, O, O, O, O, O,
     ]
-    return bottle
+    return bang
 
 sense.clear()
 sense.set_pixel(0, 0, 0, 255, 0)
@@ -140,7 +140,7 @@ while True:
             time.sleep( 1 )
             sense.show_message( "AIR!", scroll_speed = fast )
             time.sleep( 1 )
-            sense.set_pixels(smiley_bottle())
+            sense.set_pixels(smiley_bang())
             time.sleep( 5 )
             for event in sense.stick.get_events():
                 #Check if the joystick was pressed
@@ -149,11 +149,15 @@ while True:
                     if event.direction == "left": 
                         print( "Ignore: Reset alarm" )
                         sense.show_message("Ignore", scroll_speed = fast ) # Left arrow
+                        sense.set_pixels(smiley_sad())
+                        time.sleep( 3 )
                         starttime_air= time.time()
                         alarm_air = 0
                     elif event.direction == "right":
                         print( "Air: Reset alarm" )
                         sense.show_message("Air", scroll_speed = fast ) # Left arrow
+                        sense.set_pixels(smiley_smile())
+                        time.sleep( 3 )
                         #Airing-Countdown
                         air_start = time.time()
                         airing = 1
@@ -193,7 +197,7 @@ while True:
             time.sleep( 1 )
             sense.show_message( "DRINK!", scroll_speed = fast )
             time.sleep( 1 )
-            sense.set_pixels(smiley_bottle())
+            sense.set_pixels(smiley_bang())
             time.sleep( 5 )
             for event in sense.stick.get_events():
                 #Check if the joystick was pressed
