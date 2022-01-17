@@ -12,7 +12,7 @@ nothing = (0, 0, 0) #nothing
 white = ( 255, 255, 255 ) #white
 
 run = 0 #adjust as needed
-h_alarm = 60 #adjust as needed
+h_alarm = 68 #adjust as needed
 alarm_air = 0 #adjust as needed
 alarm_drink = 0 #adjust as needed
 air_interval = 60 #adjust as needed
