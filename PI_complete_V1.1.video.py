@@ -13,6 +13,7 @@ white = ( 255, 255, 255 ) #white
 
 run = 0 #adjust as needed
 h_alarm = 68 #adjust as needed
+h_alarm_low = 43 #adjust as needed
 alarm_air = 0 #adjust as needed
 alarm_drink = 0 #adjust as needed
 air_interval = 60 #adjust as needed
@@ -117,14 +118,10 @@ while True:
             alarm_drink = 1
         else:
             print( "NO DRINKING YET" )
-        #check Room temperature/pressure/humidity
-        p = sense.get_pressure() #pressure
-        t = sense.get_temperature() #temperature
+        #check Room humidity
         h = sense.get_humidity() #humidity
-        print( "Pressure: " + str( p ) )
-        print( "Temperature: " + str( t ) )
         print( "Humidity: " + str( h ) )
-        if h >=  h_alarm: #humidity too high
+        if h > h_alarm or h < h_alarm_low: #humidity too high or too low
             alarm_air = 1
         while alarm_air == 1:
             sense.clear( red )
