@@ -17,7 +17,7 @@ h_alarm_low = 43 #adjust as needed
 alarm_air = 0 #adjust as needed
 alarm_drink = 0 #adjust as needed
 air_interval = 60 #adjust as needed
-drink_interval = 20 #adjust as needed
+drink_interval = 60 #adjust as needed
 
 fast = 0.05 #scroll_speed
 
